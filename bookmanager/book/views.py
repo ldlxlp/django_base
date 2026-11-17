@@ -23,7 +23,7 @@ def index(request):
     # request,      请求
     # template_name, 模板名字
     # context=None
-
+    # 100/0
     # 模拟数据查询
     context={
         'name':'马上双11,点击有惊喜'
