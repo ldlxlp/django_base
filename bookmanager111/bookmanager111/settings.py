@@ -11,10 +11,20 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent # 与下句等效，但不可直接用，需要改其他文件
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# print((__file__))
+# /home/ldl/42/django_base/bookmanager111/bookmanager111/settings.py
+# print(os.path.abspath(__file__))
+# /home/ldl/42/django_base/bookmanager111/bookmanager111/settings.py
+
+# dirname() 获取文件的目录
+# os.path.dirname(os.path.abspath(__file__))
+# /home/ldl/42/django_base/bookmanager111/bookmanager111
+# BASE_DIR = /home/ldl/42/django_base/bookmanager111/
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -23,9 +33,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-jw*nt45*byk=x01#&l&b+#(-lu8wd2kcgrsz!ze7=pgkx6p#-g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# 调试模式
+# 在开发的时候，需要看到更多的信息，需要开启debug模式
+# 当程序上线之后，改为False
 DEBUG = True
-# 默认是 127.0.0.1
-ALLOWED_HOSTS = []
+# 允许以什么杨的形式来访问项目 默认是 127.0.0.1
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -54,7 +67,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'bookmanager111.urls'
 # 模板配置相关
-import os
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
