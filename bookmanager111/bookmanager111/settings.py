@@ -53,11 +53,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'bookmanager111.urls'
-
+# 模板配置相关
+import os
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # 告知系统模板文件在哪里
+        # 'DIRS': [os.path.join(BASE_DIR,'templates')], # 与下面等效
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
