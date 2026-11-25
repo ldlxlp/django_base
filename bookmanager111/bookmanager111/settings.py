@@ -140,3 +140,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATIC_URL='static/'
+
+# 告知系统 图片位置
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static')
+]
